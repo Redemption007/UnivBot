@@ -1,3 +1,4 @@
+require('dotenv').config()
 const discord = require('discord.js');
 const client = new discord.Client(
     {
@@ -123,4 +124,4 @@ client.on('guildMemberAdd', async member => {
 })
 
 
-client.login('MTAxOTAxMTIxNjU2OTU1MjkwNg.G0Q5Ga.wzo2Gzs_Cn8IOC5HT_bdTyW5ol2W14GZznTsPs');
+client.login(`${process.env.TOKEN}`);
