@@ -19,11 +19,6 @@ client.variables = {
     client[one] = new discord.Collection()
 });
 
-const getFiles = name => {
-    const pathFiles = path.join(__dirname, name);
-    const files = fs.readdirSync(pathFiles).filter(file => file.endsWith('.js'));
-    return [pathFiles, files]
-}
 const commandPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandPath).filter(file => file.endsWith('.js'));
 const eventPath = path.join(__dirname, 'events');

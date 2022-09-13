@@ -1,2 +1,1 @@
-worker: node main.js
-web: node deploy-commands.js
+worker: node deploy-commands.js
