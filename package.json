@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@discordjs/rest": "^1.1.0",
+    "discord-api-types": "^0.37.9",
     "discord.js": "^14.3.0",
     "dotenv": "^16.0.2"
   },
@@ -7,7 +9,6 @@
   "version": "1.0.0",
   "description": "Bot Discord pour le serveur de promotion L3 Physique 2022 - 2023",
   "main": "main.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
