@@ -77,7 +77,7 @@ module.exports = {
                 })
                 .catch(_ => member.send('La procédure est annulée.'))
         } catch (err) {
-            const generalChannel = await member.guild.channels.fetch('1018994587664121878')
+            const generalChannel = await member.guild.channels.fetch('1019071927828090952')
             const message1 = await generalChannel.send({content: message1Content, components: [groupRow]})
             await message1.awaitMessageComponent({filter: interaction => interaction.user.id === member.id, componentType:3, time:300_000})
                 .then(async interaction => {
