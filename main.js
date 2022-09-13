@@ -19,6 +19,12 @@ client.variables = {
     client[one] = new discord.Collection()
 });
 
+
+const deploying = require('./deploy-commands')
+deploying()
+
+
+
 const commandPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandPath).filter(file => file.endsWith('.js'));
 const eventPath = path.join(__dirname, 'events');
