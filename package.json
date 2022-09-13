@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "discord.js": "^14.3.0",
+    "dotenv": "^16.0.2"
+  },
+  "name": "univbot",
+  "version": "1.0.0",
+  "description": "Bot Discord pour le serveur de promotion L3 Physique 2022 - 2023",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Redemption007/UnivBot.git"
+  },
+  "author": "Redemption",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Redemption007/UnivBot/issues"
+  },
+  "homepage": "https://github.com/Redemption007/UnivBot#readme"
+}
