@@ -12,8 +12,12 @@ module.exports = {
                 .setRequired(false)
         }),
 	async execute(interaction) {
-        console.log(interaction);
-		// const member = interaction.arguments.member||await interaction.guild.members.fetch(interaction.user.id)
-        // client.emit('guildMemberAdd', member)
+        const options = interaction.options._hoistedOptions 
+		const member = options.length?options[0].member:interaction.member
+        interaction.client.emit('guildMemberAdd', member)
+        return interaction.reply({
+            content: `La commande est un succès ! :partying_face:\nL'utilisateur a 15 minutes pour remplir ses données, durée au delà de laquelle la procédure sera annulée.`,
+            ephemeral: true
+        })
 	},
 };
