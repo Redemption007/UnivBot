@@ -25,19 +25,24 @@ const eventPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventPath).filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-    const filePath = path.join(commandPath, file);
-    const command = require(filePath);
-    client.commands.set(command.data.name, command);
+    try {
+        const filePath = path.join(commandPath, file);
+        const command = require(filePath);
+        client.commands.set(command.data.name, command);
+        console.log(`✅ La commande ${command.data.name} est chargée ! ✅`);
+    } catch (e) { console.log(`❌ La commande ${command.data.name} a rencontré une erreur ! ❌`) }
 }
 for (const file of eventFiles) {
-	const filePath = path.join(eventPath, file);
+    const filePath = path.join(eventPath, file);
 	const event = require(filePath);
-	if (event.once) {
-		client.once(event.name, (...args) => event.execute(...args));
-	} else {
-		client.on(event.name, (...args) => event.execute(...args));
-        console.log(`L'event ${event.name} est chargé ! ✅`);
-	}
+    try {
+        if (event.once) {
+            client.once(event.name, (...args) => event.execute(...args));
+        } else {
+            client.on(event.name, (...args) => event.execute(...args));
+            console.log(`✅ L'event ${event.name} est chargé ! ✅`);
+        }
+    } catch (e) { console.log(`❌ L'event ${event.name} a rencontré une erreur ! ❌`) }
 }
 
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN)
