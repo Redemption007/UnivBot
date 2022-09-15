@@ -1,1 +1,1 @@
-worker: pm2 start main.js
+worker: node main.js
